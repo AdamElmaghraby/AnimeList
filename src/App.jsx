@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+import "./css/App.css";
 import AnimeCard from "./components/ui/AnimeCard";
 import { Button } from "@/components/ui/button";
 import Home from "./pages/Home";
@@ -8,6 +8,7 @@ import Favorites from "./pages/Favorites";
 import NavBar from "./components/ui/NavBar";
 
 function App() {
+
   return (
     <div>
       <NavBar />

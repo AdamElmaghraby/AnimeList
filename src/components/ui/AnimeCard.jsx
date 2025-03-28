@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import "../../css/AnimeCard.css";
 
 function AnimeCard({ anime }) {
   function onFavoriteClick() {
@@ -9,9 +10,13 @@ function AnimeCard({ anime }) {
     <div className="anime-card">
       <div className="anime-poster">
         <img src={anime.url} alt={anime.title} />
-        <div>
-          <Button size="icon" onClick={onFavoriteClick}>
-            ♡
+        <div className="anime-overlay">
+          <Button
+            size="icon"
+            className="favorite-btn"
+            onClick={onFavoriteClick}
+          >
+            ❤︎
           </Button>
         </div>
       </div>

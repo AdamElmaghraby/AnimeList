@@ -2,7 +2,7 @@ import AnimeCard from "@/components/ui/AnimeCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-
+import "../css/Home.css";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -33,7 +33,7 @@ function Home() {
         </Button>
       </form>
 
-      <div className="animes-grid">
+      <div className="anime-grid">
         {animes.map((anime) => (
           <AnimeCard anime={anime} key={anime.id} />
         ))}
