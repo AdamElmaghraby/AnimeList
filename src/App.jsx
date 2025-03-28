@@ -6,11 +6,11 @@ import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import Favorites from "./pages/Favorites";
 import NavBar from "./components/ui/NavBar";
+import { AnimeProvider } from "./contexts/AnimeContext";
 
 function App() {
-
   return (
-    <div>
+    <AnimeProvider>
       <NavBar />
       <main className="main-content">
         <Routes>
@@ -18,7 +18,7 @@ function App() {
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </main>
-    </div>
+    </AnimeProvider>
   );
 }
 

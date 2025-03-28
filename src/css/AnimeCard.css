@@ -1,6 +1,6 @@
 .anime-card {
   position: relative;
-  border-radius: 8px;
+  border-radius: 0.325rem;
   overflow: hidden;
   background-color: #1a1a1a;
   transition: transform 0.2s;
@@ -10,7 +10,7 @@
 }
 
 .anime-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-30px);
 }
 
 .anime-poster {

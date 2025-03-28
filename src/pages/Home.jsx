@@ -1,21 +1,49 @@
 import AnimeCard from "@/components/ui/AnimeCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getPopularAnimes } from "@/services/api";
+import { searchAnimes } from "@/services/api";
 import "../css/Home.css";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [animes, setAnimes] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const animes = [
-    { id: 1, title: "demon slayer", release_date: "2020" },
-    { id: 2, title: "fairy tale", release_date: "2020" },
-    { id: 3, title: "death note", release_date: "2020" },
-  ];
+  useEffect(() => {
+    const loadPopularAnimes = async () => {
+      try {
+        const popularAnimes = await getPopularAnimes();
+        setAnimes(popularAnimes);
+      } catch (err) {
+        console.log(err);
+        setError("Failed to load animes..");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const handleSearch = (e) => {
+    loadPopularAnimes();
+  }, []);
+
+  const handleSearch = async (e) => {
     e.preventDefault();
-    alert(searchQuery);
+    if (!searchQuery.trim()) return;
+    if (loading) return;
+    setLoading(true);
+    try {
+      const searchResults = await searchAnimes(searchQuery);
+      setAnimes(searchResults);
+      setError(null);
+    } catch (err) {
+      console.log(err);
+      setError("Failed to search animes...");
+    } finally {
+      setLoading(false);
+    }
+
     setSearchQuery("");
   };
 
@@ -32,12 +60,16 @@ function Home() {
           Search
         </Button>
       </form>
-
-      <div className="anime-grid">
-        {animes.map((anime) => (
-          <AnimeCard anime={anime} key={anime.id} />
-        ))}
-      </div>
+      {error && <div className="error-message">{error}</div>}
+      {loading ? (
+        <div className="loading">Loading...</div>
+      ) : (
+        <div className="anime-grid">
+          {animes.map((anime) => (
+            <AnimeCard anime={anime} key={anime.id} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
