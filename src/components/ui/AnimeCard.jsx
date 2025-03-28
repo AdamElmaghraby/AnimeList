@@ -4,12 +4,13 @@ import { useAnimeContext } from "@/contexts/AnimeContext";
 
 function AnimeCard({ anime }) {
   const { isFavorite, addToFavorites, removeFromFavorites } = useAnimeContext();
-  const favorite = isFavorite(anime.id);
+  const animeId = anime.mal_id || anime.id || `${anime.title}-${anime.year}`; // Generate unique ID
+  const favorite = isFavorite(animeId);
 
   function onFavoriteClick(e) {
     e.preventDefault();
-    if (favorite) removeFromFavorites(anime.id);
-    else addToFavorites(anime);
+    if (favorite) removeFromFavorites(animeId);
+    else addToFavorites({ ...anime, id: animeId }); // Ensure the anime object has the unique ID
   }
 
   return (
