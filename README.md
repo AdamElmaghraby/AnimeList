@@ -25,7 +25,7 @@ Anime App is a web application that allows users to browse popular anime, search
 
    ```bash
    git clone https://github.com/AdamElmaghraby/AnimeList.git
-   cd anime-app/frontend
+   cd /frontend
    ```
 
 2. Install dependencies:
