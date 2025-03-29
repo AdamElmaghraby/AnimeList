@@ -15,6 +15,7 @@ Anime App is a web application that allows users to browse popular anime, search
 - **React**: For building the user interface.
 - **Vite**: For fast development and build processes.
 - **TailwindCSS**: For styling the application.
+- **shadcn**: For building accessible and reusable UI components.
 - **Jikan API**: To fetch anime data.
 - **React Router**: For client-side routing.
 - **LocalStorage**: To persist user favorites.
