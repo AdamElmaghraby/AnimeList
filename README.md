@@ -24,7 +24,7 @@ Anime App is a web application that allows users to browse popular anime, search
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/anime-app.git
+   git clone https://github.com/AdamElmaghraby/AnimeList.git
    cd anime-app/frontend
    ```
 
@@ -47,9 +47,9 @@ Anime App is a web application that allows users to browse popular anime, search
 ```
 frontend/
 ├── src/
-│   ├── components/       # Reusable UI components
-│   ├── contexts/         # Context API for state management
-│   ├── css/              # CSS files for styling
+│   ├── components/       # Reusable UI components (e.g., AnimeCard, Navbar)
+│   ├── contexts/         # Context API for state management (e.g., AnimeContext)
+│   ├── css/              # CSS files for styling (e.g., AnimeCard.css, Navbar.css)
 │   ├── lib/              # Utility functions
 │   ├── pages/            # Page components (Home, Favorites)
 │   ├── services/         # API service functions
@@ -76,6 +76,13 @@ This app uses the [Jikan API](https://jikan.moe/) to fetch anime data. The follo
 - `npm run preview`: Preview the production build.
 - `npm run lint`: Run ESLint to check for code issues.
 
+## Future Enhancements
+
+- Implement pagination for anime lists.
+- Add more filters and sorting options for anime search.
+- Integrate additional anime details like episodes, genres, and ratings.
+- Improve accessibility features (e.g., keyboard navigation, ARIA roles).
+
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
@@ -85,9 +92,3 @@ This project is licensed under the [MIT License](./LICENSE).
 - [Jikan API](https://jikan.moe/) for providing anime data.
 - [TailwindCSS](https://tailwindcss.com/) for styling.
 - [Vite](https://vitejs.dev/) for the development environment.
-
-## Future Enhancements
-
-- Implement pagination for anime lists.
-- Add more filters and sorting options for anime search.
-- Integrate additional anime details like episodes, genres, and ratings.
