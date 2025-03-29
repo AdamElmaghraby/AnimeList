@@ -15,7 +15,7 @@
 .favorites-empty {
   text-align: center;
   padding: 4rem 2rem;
-  background-color: #1a1a1a;
+  background-color: #213944;
   border-radius: 12px;
   margin: 2rem auto;
   max-width: 600px;
@@ -24,7 +24,7 @@
 .favorites-empty h4 {
   margin-bottom: 1rem;
   font-size: 2rem;
-  color: #e50931;
+  color: #ff7b2e;
   font-weight: bold;
 }
 

@@ -13,6 +13,15 @@
   box-sizing: border-box;
 }
 
+Input:focus {
+  border-color: #ff7b2e;
+  box-shadow: 0 0 0px white;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6); /* White with 60% opacity */
+}
+
 @media (max-width: 639px) {
   .home {
     padding: 1rem 0;
@@ -30,4 +39,28 @@
   padding: 1rem;
   width: 100%;
   box-sizing: border-box;
+}
+
+.skeleton {
+  border-radius: 0.325rem;
+  background-color: #213944;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }

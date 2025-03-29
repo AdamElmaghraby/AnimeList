@@ -2,7 +2,7 @@
   position: relative;
   border-radius: 0.325rem;
   overflow: hidden;
-  background-color: #1a1a1a;
+  background-color: #213944;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* Smooth transition for lift and shadow */
   height: 100%;
   display: flex;
@@ -11,8 +11,7 @@
 }
 
 .anime-card:hover {
-  transform: translateY(-10px) !; /* Lifts the card slightly */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
+  outline: 1px solid #ea580c;
   z-index: 10; /* Bring the card to the front on hover */
 }
 
@@ -34,26 +33,79 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.1),
-    rgba(0, 0, 0, 0.8)
-  );
+  background: rgba(0, 0, 0, 0.95);
   opacity: 0;
   transition: opacity 0.2s;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 1rem;
+  color: white;
 }
 
 .anime-card:hover .anime-overlay {
   opacity: 1;
 }
 
+.anime-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.anime-details h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.anime-details p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.anime-synopsis {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.btn-contain {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+}
+
+.trailer-btn {
+  position: static;
+  bottom: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 1.3rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.trailer-btn:hover {
+  background-color: rgba(0, 0, 0, 1);
+}
+
 .favorite-btn {
-  position: absolute;
-  top: 1rem;
+  position: static;
+  bottom: 1rem;
   right: 1rem;
   color: white;
   font-size: 1.5rem;
@@ -69,11 +121,15 @@
 }
 
 .favorite-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 1);
 }
 
 .favorite-btn.active {
-  color: #ff4757;
+  color: #ea580c;
+}
+
+.score {
+  color: #ea580c;
 }
 
 .rating-select {

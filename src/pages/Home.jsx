@@ -1,6 +1,7 @@
 import AnimeCard from "@/components/ui/AnimeCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton"; // Import the Skeleton component
 import { useState, useEffect } from "react";
 import { getPopularAnimes } from "@/services/api";
 import { searchAnimes } from "@/services/api";
@@ -62,7 +63,14 @@ function Home() {
       </form>
       {error && <div className="error-message">{error}</div>}
       {loading ? (
-        <div className="loading">Loading...</div>
+        <div className="loading">
+          {/* Replace the loading text with Skeleton components */}
+          <div className="anime-grid">
+            {Array.from({ length: 5 }).map((_, index) => (
+              <Skeleton key={index} className="skeleton h-128 w-full" />
+            ))}
+          </div>
+        </div>
       ) : (
         <div className="anime-grid">
           {animes.map((anime) => (
