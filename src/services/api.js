@@ -1,7 +1,12 @@
 const BASE_URL = "https://api.jikan.moe/v4";
 
 export const getPopularAnimes = async () => {
-  const response = await fetch(`${BASE_URL}/top/anime`);
+  const min = 1;
+  const max = 5;
+  const randomInt = Math.floor(Math.random() * (max - min + 1)) + min;
+  const response = await fetch(
+    `${BASE_URL}/top/anime?filter=bypopularity&page=${randomInt}`
+  );
   const data = await response.json();
   return data.data;
 };

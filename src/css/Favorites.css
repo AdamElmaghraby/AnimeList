@@ -48,12 +48,16 @@
 
 .anime-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0, 300px)); /* Set a max width for items */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(0, 300px)
+  ); /* Set a max width for items */
   gap: 1.5rem;
   justify-content: center; /* Center items when there are fewer */
   padding: 1rem;
   width: 100%;
   box-sizing: border-box;
+  overflow: visible;
 }
 
 .anime-grid > * {

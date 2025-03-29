@@ -3,14 +3,17 @@
   border-radius: 0.325rem;
   overflow: hidden;
   background-color: #1a1a1a;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* Smooth transition for lift and shadow */
   height: 100%;
   display: flex;
   flex-direction: column;
+  z-index: 0; /* Default z-index */
 }
 
 .anime-card:hover {
-  transform: translateY(-30px);
+  transform: translateY(-10px) !; /* Lifts the card slightly */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
+  z-index: 10; /* Bring the card to the front on hover */
 }
 
 .anime-poster {
