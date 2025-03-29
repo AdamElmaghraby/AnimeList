@@ -87,9 +87,3 @@ This app uses the [Jikan API](https://jikan.moe/) to fetch anime data. The follo
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
-
-## Acknowledgments
-
-- [Jikan API](https://jikan.moe/) for providing anime data.
-- [TailwindCSS](https://tailwindcss.com/) for styling.
-- [Vite](https://vitejs.dev/) for the development environment.
